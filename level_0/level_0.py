@@ -6,7 +6,7 @@ import sys
 
 url = 'http://158.69.76.135/level0.php'
 cookie_list = []
-id = 28 
+id = 3247 
 times = 1024
 
 for i in range(times):
