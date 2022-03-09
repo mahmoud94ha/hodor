@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that votes 1024 times for 1546 user
+"""script that votes 1024 times for 3247 user
 """
 
 import requests
