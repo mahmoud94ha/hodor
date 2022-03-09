@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+# 1024.py
+"""Hodor with my Holberton ID 1024 times."""
 import requests
-import sys
 
-#level 0
+php = "http://158.69.76.135/level0.php"
+vote = {
+    "id": "3247",
+    "holdthedoor": "Submit"
+}
 
-url = 'http://158.69.76.135/level0.php'
-cookie_list = []
-id = 10320
-times = 1024
-
-for i in range(times):
-    response_get = requests.post(url, data={'id': id, 'holdthedoor': 'Enviar'})
+if __name__ == "__main__":
+    for i in range(0, 1024):
+        requests.post(php, data=vote)
