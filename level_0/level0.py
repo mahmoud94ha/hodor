@@ -4,7 +4,7 @@ import sys
 import urllib3
 
 if (len(sys.argv) != 2):
-	print("Usage: ./level0.py <ID>")
+	print("Usage: ./level0.py <3247>")
 	sys.exit(1)
 
 url = "http://158.69.76.135/level0.php"
