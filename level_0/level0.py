@@ -1,25 +1,25 @@
 #!/usr/bin/python3
+"""script that votes 1024 times for 1546 user
+"""
+
 import requests
-import sys
-import urllib3
+failures = 0
+success = 0
 
-if (len(sys.argv) != 2):
-	print("Usage: ./level0.py <3247>")
-	sys.exit(1)
+print("Starting program...")
 
-url = "http://158.69.76.135/level0.php"
-with requests.session() as client:
-	data = {
-		"id": int(sys.argv[1]),
-		"holdthedoor": "submit"
-		}
-	for cont in range(1024):
-		try:
-			client.post(url, data)
-		except OSError:
-			print('\x1b[6;30;41m' + "Network us unreachable" + '\x1b[0m')
-			sys.exit(1)
-		except urllib3.exceptions.NewConnectionError:
-			print('\x1b[6;30;41m' + "New Connection Error" + '\x1b[0m')
-			sys.exit(1)
-	print('\x1b[6;30;42m' + "Nice, 1024 request" + '\x1b[0m')
+URL = 'http://158.69.76.135/level0.php'
+user_data = {
+    'id': '3247',
+    'holdthedoor': 'Submit',
+}
+
+for _ in range(2):
+    r = requests.post(URL, data=user_data)
+    if (r.status_code == 200):
+        success += 1
+    else:
+        failures += 1
+
+print("you voted {} times for {} user".format(success, user_data['id']))
+print("Successes → {}\nFailures → {}".format(success, failures))
