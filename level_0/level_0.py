@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # 1024.py
-# Brennan D Baraban <375@holbertonschool.com>
 """Hodor with my Holberton ID 1024 times."""
 import requests
 
